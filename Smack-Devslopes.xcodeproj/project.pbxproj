@@ -8,22 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		1E05FAD88DC51D5C239D4BC1 /* Pods_Smack_Devslopes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547376014786FB07D45AE1D2 /* Pods_Smack_Devslopes.framework */; };
+		A60DB46E20D1A9B1008A8FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60DB46C20D1A9B1008A8FC7 /* Main.storyboard */; };
 		A61D38DD20CF4AFC0011A437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D38DC20CF4AFC0011A437 /* AppDelegate.swift */; };
-		A61D38E220CF4AFC0011A437 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E020CF4AFC0011A437 /* Main.storyboard */; };
 		A61D38E420CF4AFF0011A437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E320CF4AFF0011A437 /* Assets.xcassets */; };
 		A61D38E720CF4AFF0011A437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E520CF4AFF0011A437 /* LaunchScreen.storyboard */; };
 		A62F735820D0345900972979 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F735620D0345900972979 /* SWRevealViewController.m */; };
 		A62F735D20D0382F00972979 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735C20D0382F00972979 /* ChatVC.swift */; };
 		A62F735F20D0384300972979 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735E20D0384300972979 /* ChannelVC.swift */; };
+		A62F736120D19AD500972979 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F736020D19AD500972979 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A41F44B7F2FF10FF3C85893 /* Pods-Smack-Devslopes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack-Devslopes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack-Devslopes/Pods-Smack-Devslopes.release.xcconfig"; sourceTree = "<group>"; };
 		4BAF7FCDD24327AF4A0CEEDA /* Pods-Smack-Devslopes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack-Devslopes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack-Devslopes/Pods-Smack-Devslopes.debug.xcconfig"; sourceTree = "<group>"; };
 		547376014786FB07D45AE1D2 /* Pods_Smack_Devslopes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack_Devslopes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60DB46D20D1A9B1008A8FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A61D38D920CF4AFC0011A437 /* Smack-Devslopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack-Devslopes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61D38DC20CF4AFC0011A437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A61D38E120CF4AFC0011A437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A61D38E320CF4AFF0011A437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A61D38E620CF4AFF0011A437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A61D38E820CF4AFF0011A437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		A62F735720D0345900972979 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A62F735C20D0382F00972979 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		A62F735E20D0384300972979 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		A62F736020D19AD500972979 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 				A62F735A20D0380400972979 /* View */,
 				A62F735920D037FC00972979 /* Controller */,
 				A61D38DC20CF4AFC0011A437 /* AppDelegate.swift */,
-				A61D38E020CF4AFC0011A437 /* Main.storyboard */,
+				A60DB46C20D1A9B1008A8FC7 /* Main.storyboard */,
 				A61D38E320CF4AFF0011A437 /* Assets.xcassets */,
 				A61D38E520CF4AFF0011A437 /* LaunchScreen.storyboard */,
 				A61D38E820CF4AFF0011A437 /* Info.plist */,
@@ -110,6 +112,7 @@
 		A62F735A20D0380400972979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A62F736020D19AD500972979 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,9 +194,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60DB46E20D1A9B1008A8FC7 /* Main.storyboard in Resources */,
 				A61D38E720CF4AFF0011A437 /* LaunchScreen.storyboard in Resources */,
 				A61D38E420CF4AFF0011A437 /* Assets.xcassets in Resources */,
-				A61D38E220CF4AFC0011A437 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +254,7 @@
 			files = (
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,
 				A62F735D20D0382F00972979 /* ChatVC.swift in Sources */,
+				A62F736120D19AD500972979 /* GradientView.swift in Sources */,
 				A61D38DD20CF4AFC0011A437 /* AppDelegate.swift in Sources */,
 				A62F735820D0345900972979 /* SWRevealViewController.m in Sources */,
 			);
@@ -259,10 +263,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A61D38E020CF4AFC0011A437 /* Main.storyboard */ = {
+		A60DB46C20D1A9B1008A8FC7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A61D38E120CF4AFC0011A437 /* Base */,
+				A60DB46D20D1A9B1008A8FC7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
