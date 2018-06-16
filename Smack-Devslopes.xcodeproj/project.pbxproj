@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E05FAD88DC51D5C239D4BC1 /* Pods_Smack_Devslopes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547376014786FB07D45AE1D2 /* Pods_Smack_Devslopes.framework */; };
 		A60DB46E20D1A9B1008A8FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60DB46C20D1A9B1008A8FC7 /* Main.storyboard */; };
+		A60DB47120D59B5D008A8FC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60DB47020D59B5D008A8FC7 /* Constants.swift */; };
+		A60DB47320D5A36C008A8FC7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60DB47220D5A36C008A8FC7 /* LoginVC.swift */; };
 		A61D38DD20CF4AFC0011A437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D38DC20CF4AFC0011A437 /* AppDelegate.swift */; };
 		A61D38E420CF4AFF0011A437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E320CF4AFF0011A437 /* Assets.xcassets */; };
 		A61D38E720CF4AFF0011A437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E520CF4AFF0011A437 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,8 @@
 		4BAF7FCDD24327AF4A0CEEDA /* Pods-Smack-Devslopes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack-Devslopes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack-Devslopes/Pods-Smack-Devslopes.debug.xcconfig"; sourceTree = "<group>"; };
 		547376014786FB07D45AE1D2 /* Pods_Smack_Devslopes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack_Devslopes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60DB46D20D1A9B1008A8FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A60DB47020D59B5D008A8FC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A60DB47220D5A36C008A8FC7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A61D38D920CF4AFC0011A437 /* Smack-Devslopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack-Devslopes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61D38DC20CF4AFC0011A437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61D38E320CF4AFF0011A437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +60,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A60DB46F20D59B2E008A8FC7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A60DB47020D59B5D008A8FC7 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A61D38D020CF4AFC0011A437 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +90,7 @@
 		A61D38DB20CF4AFC0011A437 /* Smack-Devslopes */ = {
 			isa = PBXGroup;
 			children = (
+				A60DB46F20D59B2E008A8FC7 /* Utilities */,
 				A62F735B20D0380B00972979 /* Model */,
 				A62F735A20D0380400972979 /* View */,
 				A62F735920D037FC00972979 /* Controller */,
@@ -105,6 +118,7 @@
 			children = (
 				A62F735C20D0382F00972979 /* ChatVC.swift */,
 				A62F735E20D0384300972979 /* ChannelVC.swift */,
+				A60DB47220D5A36C008A8FC7 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,9 +268,11 @@
 			files = (
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,
 				A62F735D20D0382F00972979 /* ChatVC.swift in Sources */,
+				A60DB47320D5A36C008A8FC7 /* LoginVC.swift in Sources */,
 				A62F736120D19AD500972979 /* GradientView.swift in Sources */,
 				A61D38DD20CF4AFC0011A437 /* AppDelegate.swift in Sources */,
 				A62F735820D0345900972979 /* SWRevealViewController.m in Sources */,
+				A60DB47120D59B5D008A8FC7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

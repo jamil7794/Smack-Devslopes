@@ -9,7 +9,8 @@
 import UIKit
 
 class ChannelVC: UIViewController {
-
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,4 +21,9 @@ class ChannelVC: UIViewController {
         super.didReceiveMemoryWarning()
         self.revealViewController().rearViewRevealWidth = 20 //64: Issue
     }
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+    }
+    
 }
