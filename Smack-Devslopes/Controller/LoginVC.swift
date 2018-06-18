@@ -18,5 +18,8 @@ class LoginVC: UIViewController {
     @IBAction func closePressed(_ sender: Any) { //66
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func createAccPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_CREATE_ACC, sender: nil)
+    }
     
 }
