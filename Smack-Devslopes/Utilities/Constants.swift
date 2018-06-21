@@ -7,6 +7,18 @@
 //
 
 import Foundation
+typealias CompletionHandler = (_ Success: Bool) ->()// Creating a clsoure: We are going to send a web request, wheneverthe web request is done, we are going to complete it by calling this true or false 71
+
+// Segues
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACC = "toCreateAccount"
 let TO_UNWINDTOCHANNEL = "unwindToChannel"
+
+// User Defaults
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "loggedIn"
+let USER_EMAIL = "userEmail"
+
+//URL Constants
+let BASE_URL =  "https://charychatapp.herokuapp.com/v1/"
+let URL_REGISTER = "\(BASE_URL)account/register"
