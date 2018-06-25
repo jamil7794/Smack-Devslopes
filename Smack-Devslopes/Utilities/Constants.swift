@@ -13,6 +13,7 @@ typealias CompletionHandler = (_ Success: Bool) ->()// Creating a clsoure: We ar
 let BASE_URL =  "https://hellohello1.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let LOGIN_URL_REGISTER = "\(BASE_URL)account/login"
+let USER_URL = "\(BASE_URL)user/add"
 
 // Segues
 let TO_LOGIN = "toLogin"
@@ -27,4 +28,5 @@ let USER_EMAIL = "userEmail"
 // HEADERS
 let HEADER = [
     "Content-Type":"application/json; charset=utf-8"
+    
 ]
