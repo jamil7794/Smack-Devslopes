@@ -9,18 +9,17 @@
 import UIKit
 
 class ChannelVC: UIViewController {
-    @IBOutlet weak var loginBtn: UIButton!
+    static let instance = ChannelVC()
+    @IBOutlet weak var loginBtn: UIButton?
     @IBAction func prepareforUnwind(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        self.revealViewController().rearViewRevealWidth = 20 //64: Issue
+       loginBtn?.setTitle("\(userDataService.instance.name)", for: .normal)
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
