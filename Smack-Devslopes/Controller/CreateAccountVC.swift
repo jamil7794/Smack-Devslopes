@@ -16,13 +16,20 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     // variables
-    var profileD = "profileDefault"
+    var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if userDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: userDataService.instance.avatarName)
+            avatarName = userDataService.instance.avatarName
+        }
     }
 
     @IBAction func closePressed(_ sender: Any) {
@@ -45,7 +52,7 @@ class CreateAccountVC: UIViewController {
                 AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
                     if success {
 //                        print("logged in user!", AuthService.instance.authToken) //73
-                        AuthService.instance.createUser(name: name, email: email, avatarName: self.profileD, avatarColor: self.avatarColor, completion: { (sucess) in
+                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (sucess) in
                             if success {
                                 print(userDataService.instance.name, userDataService.instance.avatarName)
                                 self.performSegue(withIdentifier: TO_UNWINDTOCHANNEL, sender: nil)
