@@ -90,6 +90,7 @@ class AuthService{
 //                            self.authToken = token
 //                        }
 //                    }
+                    
                     guard let data = response.data else {return}
                     let json = try!JSON(data: data)
                     self.userEmail = json["user"].stringValue

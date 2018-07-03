@@ -24,6 +24,7 @@
 		A62F735D20D0382F00972979 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735C20D0382F00972979 /* ChatVC.swift */; };
 		A62F735F20D0384300972979 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735E20D0384300972979 /* ChannelVC.swift */; };
 		A62F736120D19AD500972979 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F736020D19AD500972979 /* GradientView.swift */; };
+		A6A10A6720EBCAE60019AC68 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A10A6620EBCAE60019AC68 /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A62F735C20D0382F00972979 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		A62F735E20D0384300972979 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		A62F736020D19AD500972979 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		A6A10A6620EBCAE60019AC68 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				A62F736020D19AD500972979 /* GradientView.swift */,
 				A60ABF4920DFF140002BDF71 /* RoundedButton.swift */,
 				A60ABF4F20EABEAA002BDF71 /* AvatarCell.swift */,
+				A6A10A6620EBCAE60019AC68 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,
 				A60ABF4E20E2B78D002BDF71 /* AvatarPickerVC.swift in Sources */,
 				A60ABF4A20DFF140002BDF71 /* RoundedButton.swift in Sources */,
+				A6A10A6720EBCAE60019AC68 /* CircleImage.swift in Sources */,
 				A62F735D20D0382F00972979 /* ChatVC.swift in Sources */,
 				A60DB47520D8170C008A8FC7 /* CreateAccountVC.swift in Sources */,
 				A60ABF4820DAC2A1002BDF71 /* AuthService.swift in Sources */,
