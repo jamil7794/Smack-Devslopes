@@ -11,6 +11,7 @@ import UIKit
 class ChannelVC: UIViewController {
     static let instance = ChannelVC()
     @IBOutlet weak var loginBtn: UIButton!
+
     @IBAction func prepareforUnwind(segue: UIStoryboardSegue){}
     
     @IBOutlet weak var userImg: CircleImage!
@@ -29,6 +30,7 @@ class ChannelVC: UIViewController {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(userDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: userDataService.instance.avatarName)
+            userImg.backgroundColor = userDataService.instance.returnUIColor(components: userDataService.instance.avatarColor)
         }else{
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")

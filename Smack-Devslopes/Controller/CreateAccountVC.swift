@@ -73,10 +73,10 @@ class CreateAccountVC: UIViewController {
 //                        print("logged in user!", AuthService.instance.authToken) //73
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (sucess) in
                             if success {
-                               self.spinner.isHidden = true
+                                self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: TO_UNWINDTOCHANNEL, sender: nil)
-                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)//78
                             }
                         })
                     }
