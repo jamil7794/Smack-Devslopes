@@ -35,4 +35,4 @@ let smackPurplePlaceHolder = #colorLiteral(red: 0.3254901961, green: 0.421520113
 
 //Notifications
 let NOTIF_USER_DATA_DID_CHANGE
- = Notification.Name("NotifyuserDataCHange")
+ = Notification.Name("NotifyuserDataChange")
