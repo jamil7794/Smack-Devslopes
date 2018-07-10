@@ -14,6 +14,7 @@ let BASE_URL =  "https://hellohello1.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let LOGIN_URL_REGISTER = "\(BASE_URL)account/login"
 let USER_URL = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 
 // Segues
 let TO_LOGIN = "toLogin"
@@ -30,6 +31,11 @@ let USER_EMAIL = "userEmail"
 let HEADER = [
     "Content-Type":"application/json; charset=utf-8"
 ]
+let BEARER_HEADER = [
+    "Authorization":"Bearer \(AuthService.instance.authToken)",
+    "Content-Type":"application/json; charset=utf-8"
+]
+
 // colors
 let smackPurplePlaceHolder = #colorLiteral(red: 0.3254901961, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
 
