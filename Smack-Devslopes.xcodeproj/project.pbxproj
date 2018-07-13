@@ -29,6 +29,9 @@
 		A6A2FCD320F3BB3900432D55 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A2FCD120F3BB3900432D55 /* ProfileVC.xib */; };
 		A6A2FCD520F4F64800432D55 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCD420F4F64800432D55 /* MessageService.swift */; };
 		A6A2FCD720F4F76E00432D55 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCD620F4F76E00432D55 /* Channel.swift */; };
+		A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */; };
+		A6A2FCDC20F9115600432D55 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */; };
+		A6A2FCDD20F9115600432D55 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A2FCDB20F9115600432D55 /* AddChannelVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		A6A2FCD120F3BB3900432D55 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = ../Controller/ProfileVC.xib; sourceTree = "<group>"; };
 		A6A2FCD420F4F64800432D55 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		A6A2FCD620F4F76E00432D55 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
+		A6A2FCDB20F9115600432D55 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 				A60DB47420D8170C008A8FC7 /* CreateAccountVC.swift */,
 				A60ABF4D20E2B78D002BDF71 /* AvatarPickerVC.swift */,
 				A6A2FCD020F3BB3900432D55 /* ProfileVC.swift */,
+				A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 				A60ABF4920DFF140002BDF71 /* RoundedButton.swift */,
 				A60ABF4F20EABEAA002BDF71 /* AvatarCell.swift */,
 				A6A10A6620EBCAE60019AC68 /* CircleImage.swift */,
+				A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A2FCD120F3BB3900432D55 /* ProfileVC.xib */,
+				A6A2FCDB20F9115600432D55 /* AddChannelVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A2FCDD20F9115600432D55 /* AddChannelVC.xib in Resources */,
 				A6A2FCD320F3BB3900432D55 /* ProfileVC.xib in Resources */,
 				A60DB46E20D1A9B1008A8FC7 /* Main.storyboard in Resources */,
 				A61D38E720CF4AFF0011A437 /* LaunchScreen.storyboard in Resources */,
@@ -317,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A2FCD220F3BB3900432D55 /* ProfileVC.swift in Sources */,
+				A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */,
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,
 				A60ABF4E20E2B78D002BDF71 /* AvatarPickerVC.swift in Sources */,
 				A60ABF4A20DFF140002BDF71 /* RoundedButton.swift in Sources */,
@@ -328,6 +339,7 @@
 				A60ABF4820DAC2A1002BDF71 /* AuthService.swift in Sources */,
 				A60DB47320D5A36C008A8FC7 /* LoginVC.swift in Sources */,
 				A62F736120D19AD500972979 /* GradientView.swift in Sources */,
+				A6A2FCDC20F9115600432D55 /* AddChannelVC.swift in Sources */,
 				A61D38DD20CF4AFC0011A437 /* AppDelegate.swift in Sources */,
 				A60ABF5020EABEAA002BDF71 /* AvatarCell.swift in Sources */,
 				A62F735820D0345900972979 /* SWRevealViewController.m in Sources */,
