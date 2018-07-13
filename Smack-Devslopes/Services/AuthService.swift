@@ -141,7 +141,7 @@ class AuthService{
         
     }
     
-    func findUserByEmail(completion: @escaping CompletionHandler){ //80
+    func findUserByEmail(completion: @escaping CompletionHandler){ //81
         Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding:JSONEncoding.default, headers: BEARER_HEADER).responseJSON{ (response) in
             
             if response.result.error == nil {
@@ -156,7 +156,7 @@ class AuthService{
         }
     }
     
-    func setUserInfo(data: Data){
+    func setUserInfo(data: Data){ //81
         let json = try!JSON(data: data)
         let name = json["name"].stringValue
         let email = json["email"].stringValue
