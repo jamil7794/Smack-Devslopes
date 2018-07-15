@@ -22,7 +22,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-            // Whenever we create an account the notification is posted. this function obsevers the notification when it is posted then it performs a task when we logout, all the variables will be equal to empty setrings or false. i.e.  Radios and broadcast 
+            // Whenever we create an account the notification is posted. this function obsevers the notification when it is posted then it performs a task when we logout, all the variables will be equal to empty setrings or false. i.e.  Radios and broadcast
+        SocketService.instance.getChannel { (success) in
+            self.tableView.reloadData() //84
+        }
+       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) { //80
@@ -36,6 +41,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let profile = ProfileVC()
             profile.modalPresentationStyle = .custom
             present(profile, animated: true, completion: nil)
+            
         }else{
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
@@ -54,6 +60,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            self.tableView.reloadData()
         }
     }
     

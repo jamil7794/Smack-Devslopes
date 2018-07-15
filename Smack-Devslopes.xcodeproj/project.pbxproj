@@ -32,6 +32,7 @@
 		A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */; };
 		A6A2FCDC20F9115600432D55 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */; };
 		A6A2FCDD20F9115600432D55 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A2FCDB20F9115600432D55 /* AddChannelVC.xib */; };
+		A6E1448120FAE64E002B7753 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1448020FAE64E002B7753 /* SocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		A6A2FCDB20F9115600432D55 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		A6E1448020FAE64E002B7753 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				A60ABF4720DAC2A1002BDF71 /* AuthService.swift */,
 				A60ABF4B20E187A9002BDF71 /* userDataService.swift */,
 				A6A2FCD420F4F64800432D55 /* MessageService.swift */,
+				A6E1448020FAE64E002B7753 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E1448120FAE64E002B7753 /* SocketService.swift in Sources */,
 				A6A2FCD220F3BB3900432D55 /* ProfileVC.swift in Sources */,
 				A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */,
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,

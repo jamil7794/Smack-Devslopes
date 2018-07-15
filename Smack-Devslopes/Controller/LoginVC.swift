@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    static let instance = LoginVC()
 
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var userName: UITextField!

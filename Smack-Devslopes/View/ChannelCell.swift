@@ -35,6 +35,6 @@ class ChannelCell: UITableViewCell {
         let title = channel.channelTitle ?? ""
         // If you cant find the value there then return an empty string
 
-        channelName.text = title
+        channelName.text = "#\(title)"
     }
 }
