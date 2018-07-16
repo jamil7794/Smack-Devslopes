@@ -9,11 +9,11 @@
 import UIKit
 
 class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    static let instance = ChannelVC()
     @IBOutlet weak var loginBtn: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
     @IBAction func prepareforUnwind(segue: UIStoryboardSegue){}
+
     
     @IBOutlet weak var userImg: CircleImage!
     
@@ -23,11 +23,10 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             // Whenever we create an account the notification is posted. this function obsevers the notification when it is posted then it performs a task when we logout, all the variables will be equal to empty setrings or false. i.e.  Radios and broadcast
+         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         SocketService.instance.getChannel { (success) in
-            self.tableView.reloadData() //84
+            self.tableView.reloadData()
         }
-       
-        
     }
     
     override func viewDidAppear(_ animated: Bool) { //80
@@ -82,11 +81,22 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return MessageService.instance.channels.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {//85
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIF_CHANNELS_SELECTED, object: nil)
+        
+        self.revealViewController().revealToggle(animated: true)
+    }
     @IBAction func addChannelVC(_ sender: Any) {
-        let addChannel = AddChannelVC()
-        addChannel.modalPresentationStyle = .custom
-        present(addChannel, animated: true, completion: nil)
+        if AuthService.instance.isLoggedIn {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        }
     }
     
-    
+    @objc func channelsLoaded(_ notif: Notification){
+        self.tableView.reloadData()
+    }
 }
