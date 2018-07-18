@@ -44,6 +44,32 @@ class SocketService: NSObject {
                 completion(true)
             
         }
-        
     }
+    
+    func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler){
+            let user = userDataService.instance
+            socket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        completion(true)
+    }
+    
+//    io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
+    
+//    func getMessage(completion: @escaping CompletionHandler){
+//        
+//        socket.on("messageCreated") { (dataArray, ack) in
+//            guard let messageId = dataArray[0] as? String else {return}
+//            guard let messageBody = dataArray[1] as? String else {return}
+//            guard let userId = dataArray[2] as? String else {return}
+//            guard let ChannelId = dataArray[3] as? String else {return}
+//            guard let userName = dataArray[4] as? String else {return}
+//            guard let userAvatar = dataArray[5] as? String else {return}
+//            guard let userAvatarColor = dataArray[6] as? String else {return}
+//            guard let timeStamp = dataArray[7] as? String else {return}
+//            
+//            let newMessage = Message(message: messageBody, userName: userName, channelId: ChannelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: messageId, timeStamp: timeStamp)
+//            
+//            MessageService.instance.messages.append(newMessage)
+//            
+//        }
+//    }
 }

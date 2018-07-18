@@ -14,9 +14,13 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
     
-
+    @IBOutlet weak var messageTxtBox: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.bindToKeyboard() // the entire view shifts up
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap) // Dismiss the keyboard when we press the view
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         // Adding a view controller on the top left. We use the function SWrevealViewController.receal togggle from RevealViewCOntroller. 64
         
@@ -72,4 +76,18 @@ class ChatVC: UIViewController {
         }
     }
 
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            guard let message = messageTxtBox.text else {return}
+            SocketService.instance.addMessage(messageBody: message, userId: userDataService.instance.id, channelId: channelId) { (success) in
+                self.messageTxtBox.text = ""
+                self.messageTxtBox.resignFirstResponder() // Dismiss the keyboard
+            }
+        }
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
 }

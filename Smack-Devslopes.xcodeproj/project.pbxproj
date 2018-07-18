@@ -21,6 +21,7 @@
 		A61D38E420CF4AFF0011A437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E320CF4AFF0011A437 /* Assets.xcassets */; };
 		A61D38E720CF4AFF0011A437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61D38E520CF4AFF0011A437 /* LaunchScreen.storyboard */; };
 		A629303520FCED1400C406E7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629303420FCED1400C406E7 /* Message.swift */; };
+		A629303920FF866300C406E7 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629303820FF866300C406E7 /* KeyboardBoundView.swift */; };
 		A62F735820D0345900972979 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F735620D0345900972979 /* SWRevealViewController.m */; };
 		A62F735D20D0382F00972979 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735C20D0382F00972979 /* ChatVC.swift */; };
 		A62F735F20D0384300972979 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735E20D0384300972979 /* ChannelVC.swift */; };
@@ -55,6 +56,7 @@
 		A61D38E620CF4AFF0011A437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A61D38E820CF4AFF0011A437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A629303420FCED1400C406E7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A629303820FF866300C406E7 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardBoundView.swift; path = "../../../../Downloads/Smack Assets/KeyboardBind View/KeyboardBoundView.swift"; sourceTree = "<group>"; };
 		A62F735520D0345800972979 /* Smack-Devslopes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Devslopes-Bridging-Header.h"; sourceTree = "<group>"; };
 		A62F735620D0345900972979 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A62F735720D0345900972979 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		A62F735A20D0380400972979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A629303820FF866300C406E7 /* KeyboardBoundView.swift */,
 				A62F736020D19AD500972979 /* GradientView.swift */,
 				A60ABF4920DFF140002BDF71 /* RoundedButton.swift */,
 				A60ABF4F20EABEAA002BDF71 /* AvatarCell.swift */,
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A629303920FF866300C406E7 /* KeyboardBoundView.swift in Sources */,
 				A6E1448120FAE64E002B7753 /* SocketService.swift in Sources */,
 				A6A2FCD220F3BB3900432D55 /* ProfileVC.swift in Sources */,
 				A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */,
