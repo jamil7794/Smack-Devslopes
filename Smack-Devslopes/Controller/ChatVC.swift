@@ -14,7 +14,10 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendBtn: UIButton!
     
+    // Variabels
+    var typing  = false
     
     @IBOutlet weak var messageTxtBox: UITextField!
     
@@ -23,6 +26,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 80
+        sendBtn.isHidden = true
         tableView.rowHeight = UITableViewAutomaticDimension
         view.bindToKeyboard() // the entire view shifts up
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
@@ -42,6 +46,16 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             }
         }
+        
+        SocketService.instance.geChatMessage { (success) in
+            if success{
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let indIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: indIndex, at: .bottom, animated: false)
+                }
+            }
+        }
     }
     
     @objc func userDataDidChange(_ notif: Notification){
@@ -50,6 +64,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             channelNameLbl.text = "Smack"
         }else{
             channelNameLbl.text = "Please Log In"
+            tableView.reloadData()
         }
     }
     
@@ -83,7 +98,21 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             }
         }
     }
-
+    
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        // Showiein when other users are typing
+        if messageTxtBox.text == "" {
+            typing = false
+            sendBtn.isHidden = true
+        }else {
+            if typing == false {
+                sendBtn.isHidden = false
+            }
+            typing = true
+        }
+    }
+    
     @IBAction func sendMessagePressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             guard let channelId = MessageService.instance.selectedChannel?.id else {return}

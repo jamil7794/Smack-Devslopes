@@ -54,21 +54,25 @@ class SocketService: NSObject {
     
 //    io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
     
-    func getMessage(completion: @escaping CompletionHandler){
+    func geChatMessage(completion: @escaping CompletionHandler){
         
         socket.on("messageCreated") { (dataArray, ack) in
-            guard let messageId = dataArray[0] as? String else {return}
-            guard let messageBody = dataArray[1] as? String else {return}
-            guard let userId = dataArray[2] as? String else {return}
-            guard let ChannelId = dataArray[3] as? String else {return}
-            guard let userName = dataArray[4] as? String else {return}
-            guard let userAvatar = dataArray[5] as? String else {return}
-            guard let userAvatarColor = dataArray[6] as? String else {return}
+            guard let messageBody = dataArray[0] as? String else {return}
+            guard let ChannelId = dataArray[2] as? String else {return}
+            guard let userName = dataArray[3] as? String else {return}
+            guard let userAvatar = dataArray[4] as? String else {return}
+            guard let userAvatarColor = dataArray[5] as? String else {return}
+            guard let id = dataArray[6] as? String else {return}
             guard let timeStamp = dataArray[7] as? String else {return}
             
-            let newMessage = Message(message: messageBody, userName: userName, channelId: ChannelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: messageId, timeStamp: timeStamp)
-            
-            MessageService.instance.messages.append(newMessage)
+            if ChannelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn{
+                
+                let newMessage = Message(message: messageBody, userName: userName, channelId: ChannelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+                MessageService.instance.messages.append(newMessage)
+                completion(true)
+            }else{
+                completion(false)
+            }
             
         }
     }

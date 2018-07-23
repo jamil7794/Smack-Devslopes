@@ -573,6 +573,9 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="VAq-RF-RpF" eventType="editingChanged" id="Wmw-A2-Qgo"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-lz-RBG">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
@@ -662,6 +665,7 @@
                         <outlet property="channelNameLbl" destination="Ahp-pp-JgH" id="jd3-2O-H0A"/>
                         <outlet property="menuBtn" destination="u67-iw-fDJ" id="q3C-od-S3V"/>
                         <outlet property="messageTxtBox" destination="GZd-tl-hhQ" id="J9u-Bm-xDf"/>
+                        <outlet property="sendBtn" destination="cQb-lz-RBG" id="SHn-Fg-all"/>
                         <outlet property="tableView" destination="ny3-Ed-Ow2" id="3ss-et-Cr9"/>
                     </connections>
                 </viewController>
