@@ -55,7 +55,7 @@ class SocketService: NSObject {
 //    io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
     
     func geChatMessage(completion: @escaping CompletionHandler){
-        
+        //This is a boolean completion handler, the oother one is dictionary
         socket.on("messageCreated") { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else {return}
             guard let ChannelId = dataArray[2] as? String else {return}
@@ -74,6 +74,17 @@ class SocketService: NSObject {
                 completion(false)
             }
             
+        }
+    }
+    
+    func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String: String]) -> Void){
+        // We are passing in a dictionary
+        // This is a type dictionary completion handler 
+        
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String: String] else {return}
+            completionHandler(typingUsers)
+            // We are passing in the dictionary in the completion handler
         }
     }
 }
