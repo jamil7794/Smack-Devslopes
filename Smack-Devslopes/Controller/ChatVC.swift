@@ -48,15 +48,26 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             }
         }
         
-        SocketService.instance.geChatMessage { (success) in
-            if success{
+        SocketService.instance.geChatMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
-                    let indIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: indIndex, at: .bottom, animated: false)
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
                 }
             }
         }
+        
+//        SocketService.instance.geChatMessage { (success) in
+//            if success{
+//                self.tableView.reloadData()
+//                if MessageService.instance.messages.count > 0 {
+//                    let indIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+//                    self.tableView.scrollToRow(at: indIndex, at: .bottom, animated: false)
+//                }
+//            }
+//        }
         
         SocketService.instance.getTypingUsers { (typingUsers) in
             guard let channelID = MessageService.instance.selectedChannel?.id else {return}
@@ -68,7 +79,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     if names == "" {
                         names = typingUser
                     }else{
-                        names = "\(names) , \(typingUser)"
+                        names = "\(names) , \(typingUser)" 
                     }
                     numberOfTypers += 1
                 }

@@ -15,6 +15,7 @@ class MessageService{
     static let instance = MessageService()
     var selectedChannel : Channel?
     var messages = [Message]()
+    var unreadChannel = [String]()
     var channels = [Channel]()
     var c = ""
     

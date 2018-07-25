@@ -27,6 +27,13 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         SocketService.instance.getChannel { (success) in
             self.tableView.reloadData()
         }
+        
+        SocketService.instance.geChatMessage { (newMessage) in
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.unreadChannel.append(newMessage.channelId)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) { //80
@@ -84,6 +91,15 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {//85
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
+        
+        
+        if MessageService.instance.unreadChannel.count > 0 {
+            MessageService.instance.unreadChannel = MessageService.instance.unreadChannel.filter{$0 != channel.id} // Take out the chennelId that we pressed
+        }
+        
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
         NotificationCenter.default.post(name: NOTIF_CHANNELS_SELECTED, object: nil)
         
         self.revealViewController().revealToggle(animated: true)

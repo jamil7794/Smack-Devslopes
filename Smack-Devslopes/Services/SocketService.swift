@@ -54,7 +54,7 @@ class SocketService: NSObject {
     
 //    io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
     
-    func geChatMessage(completion: @escaping CompletionHandler){
+    func geChatMessage(completion: @escaping (_ newMessage: Message) -> Void){
         //This is a boolean completion handler, the oother one is dictionary
         socket.on("messageCreated") { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else {return}
@@ -65,14 +65,9 @@ class SocketService: NSObject {
             guard let id = dataArray[6] as? String else {return}
             guard let timeStamp = dataArray[7] as? String else {return}
             
-            if ChannelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn{
-                
-                let newMessage = Message(message: messageBody, userName: userName, channelId: ChannelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
-                MessageService.instance.messages.append(newMessage)
-                completion(true)
-            }else{
-                completion(false)
-            }
+            let newMessage = Message(message: messageBody, userName: userName, channelId: ChannelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+            
+            completion(newMessage)
             
         }
     }
