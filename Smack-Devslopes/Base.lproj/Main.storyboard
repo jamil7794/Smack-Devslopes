@@ -145,7 +145,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="074-bv-hUC">
                                 <rect key="frame" x="62.5" y="286.5" width="250" height="94"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uMW-Vk-1cB">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uMW-Vk-1cB">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="YLL-7Y-aqm"/>
@@ -242,9 +242,9 @@
                         <viewLayoutGuide key="safeArea" id="lar-jf-KqI"/>
                     </view>
                     <connections>
+                        <outlet property="email" destination="uMW-Vk-1cB" id="eRY-81-1FR"/>
                         <outlet property="password" destination="BDD-la-8Ux" id="AWd-Pc-jDi"/>
                         <outlet property="spinner" destination="IQl-HU-kag" id="zZz-2E-Q1A"/>
-                        <outlet property="userName" destination="uMW-Vk-1cB" id="bRS-a3-V3S"/>
                         <segue destination="VRh-3k-lWl" kind="show" identifier="toCreateAccount" id="7r4-kY-9EN"/>
                     </connections>
                 </viewController>

@@ -13,7 +13,8 @@ class LoginVC: UIViewController {
     static let instance = LoginVC()
 
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var userName: UITextField!
+
+    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,10 @@ class LoginVC: UIViewController {
         spinner.isHidden = false
         spinner.startAnimating()
         
-        guard let email = userName.text , userName.text != "" else {return }
-        guard let pass = userName.text , userName.text != "" else {return }
+        guard let eMail = email.text , email.text != "" else {return }
+        guard let pass = password.text , password.text != "" else {return }
         
-        AuthService.instance.loginUser(email: email, password: pass){ (success) in
+        AuthService.instance.loginUser(email: eMail, password: pass){ (success) in
             if success {
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
@@ -49,7 +50,7 @@ class LoginVC: UIViewController {
     
     func setUpView(){
         spinner.isHidden = true
-        userName.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
+        email.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
         password.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
     }
 }
