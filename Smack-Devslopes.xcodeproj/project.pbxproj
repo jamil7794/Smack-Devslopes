@@ -27,6 +27,9 @@
 		A62F735D20D0382F00972979 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735C20D0382F00972979 /* ChatVC.swift */; };
 		A62F735F20D0384300972979 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F735E20D0384300972979 /* ChannelVC.swift */; };
 		A62F736120D19AD500972979 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F736020D19AD500972979 /* GradientView.swift */; };
+		A639AB2C210CE4B200F9DEE5 /* FindAllUsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AB2B210CE4B200F9DEE5 /* FindAllUsersVC.swift */; };
+		A639AB2E210CE56E00F9DEE5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AB2D210CE56E00F9DEE5 /* Users.swift */; };
+		A639AB30210CF08000F9DEE5 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AB2F210CF08000F9DEE5 /* UsersCell.swift */; };
 		A6A10A6720EBCAE60019AC68 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A10A6620EBCAE60019AC68 /* CircleImage.swift */; };
 		A6A2FCD220F3BB3900432D55 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2FCD020F3BB3900432D55 /* ProfileVC.swift */; };
 		A6A2FCD320F3BB3900432D55 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A2FCD120F3BB3900432D55 /* ProfileVC.xib */; };
@@ -65,6 +68,9 @@
 		A62F735C20D0382F00972979 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		A62F735E20D0384300972979 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		A62F736020D19AD500972979 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		A639AB2B210CE4B200F9DEE5 /* FindAllUsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAllUsersVC.swift; sourceTree = "<group>"; };
+		A639AB2D210CE56E00F9DEE5 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A639AB2F210CF08000F9DEE5 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		A6A10A6620EBCAE60019AC68 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		A6A2FCD020F3BB3900432D55 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		A6A2FCD120F3BB3900432D55 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = ../Controller/ProfileVC.xib; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				A60ABF4D20E2B78D002BDF71 /* AvatarPickerVC.swift */,
 				A6A2FCD020F3BB3900432D55 /* ProfileVC.swift */,
 				A6A2FCDA20F9115600432D55 /* AddChannelVC.swift */,
+				A639AB2B210CE4B200F9DEE5 /* FindAllUsersVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 				A6A10A6620EBCAE60019AC68 /* CircleImage.swift */,
 				A6A2FCD820F8FA9B00432D55 /* ChannelCell.swift */,
 				A629303E20FFBC1100C406E7 /* messageCell.swift */,
+				A639AB2F210CF08000F9DEE5 /* UsersCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			children = (
 				A6A2FCD620F4F76E00432D55 /* Channel.swift */,
 				A629303420FCED1400C406E7 /* Message.swift */,
+				A639AB2D210CE56E00F9DEE5 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 				A6E1448120FAE64E002B7753 /* SocketService.swift in Sources */,
 				A6A2FCD220F3BB3900432D55 /* ProfileVC.swift in Sources */,
 				A6A2FCD920F8FA9B00432D55 /* ChannelCell.swift in Sources */,
+				A639AB30210CF08000F9DEE5 /* UsersCell.swift in Sources */,
 				A62F735F20D0384300972979 /* ChannelVC.swift in Sources */,
 				A60ABF4E20E2B78D002BDF71 /* AvatarPickerVC.swift in Sources */,
 				A60ABF4A20DFF140002BDF71 /* RoundedButton.swift in Sources */,
@@ -350,6 +360,8 @@
 				A6A10A6720EBCAE60019AC68 /* CircleImage.swift in Sources */,
 				A6A2FCD520F4F64800432D55 /* MessageService.swift in Sources */,
 				A62F735D20D0382F00972979 /* ChatVC.swift in Sources */,
+				A639AB2E210CE56E00F9DEE5 /* Users.swift in Sources */,
+				A639AB2C210CE4B200F9DEE5 /* FindAllUsersVC.swift in Sources */,
 				A60DB47520D8170C008A8FC7 /* CreateAccountVC.swift in Sources */,
 				A60ABF4820DAC2A1002BDF71 /* AuthService.swift in Sources */,
 				A60DB47320D5A36C008A8FC7 /* LoginVC.swift in Sources */,

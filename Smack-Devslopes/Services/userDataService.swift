@@ -17,6 +17,8 @@ class userDataService{ //74
     public private(set) var email = ""
     public private(set) var name = ""
     
+    
+    
     func setUserData(id: String, color: String, avatarName: String, email: String, name: String){
         self.id = id
         self.avatarColor = color
@@ -70,4 +72,6 @@ class userDataService{ //74
         MessageService.instance.clearChannels()
         MessageService.instance.clearMessages()
     }
+    
+    
 }

@@ -16,6 +16,12 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     
+    @IBOutlet weak var updateUserBtn: RoundedButton!
+    
+    @IBOutlet weak var updateUserTxt: UITextField!
+    @IBOutlet weak var updateBtn: RoundedButton!
+    
+    
     @IBOutlet weak var bgView: UIView!
     
     override func viewDidLoad() {
@@ -50,4 +56,16 @@ class ProfileVC: UIViewController {
     @objc func closeTap(_ recognizer: UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func updateUserBtnFunc(_ sender: Any) {
+        updateUserTxt.isHidden = false
+        updateBtn.isHidden = false
+        updateUserBtn.isHidden = true
+    }
+    
+    @IBAction func updateBtnFunc(_ sender: Any) {
+        updateUserBtn.isHidden = false
+        updateBtn.isHidden = true
+        updateUserTxt.isHidden = true
+    }
+    
 }

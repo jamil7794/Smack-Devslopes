@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var id: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -53,4 +54,6 @@ class LoginVC: UIViewController {
         email.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
         password.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
     }
+    
+    
 }

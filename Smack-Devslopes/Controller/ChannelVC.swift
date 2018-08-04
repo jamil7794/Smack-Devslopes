@@ -11,6 +11,7 @@ import UIKit
 class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var loginBtn: UIButton!
 
+    @IBOutlet weak var findAllUsers: RoundedButton!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func prepareforUnwind(segue: UIStoryboardSegue){}
 
@@ -33,6 +34,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 MessageService.instance.unreadChannel.append(newMessage.channelId)
                 self.tableView.reloadData()
             }
+        }
+        AuthService.instance.findAllUsers { (success) in
+            
         }
     }
     
@@ -62,10 +66,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle(userDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: userDataService.instance.avatarName)
             userImg.backgroundColor = userDataService.instance.returnUIColor(components: userDataService.instance.avatarColor)
+            findAllUsers.isHidden = false
         }else{
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            findAllUsers.isHidden = true
             self.tableView.reloadData()
         }
     }

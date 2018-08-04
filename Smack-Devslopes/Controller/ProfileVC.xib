@@ -14,6 +14,9 @@
             <connections>
                 <outlet property="bgView" destination="P3i-6z-yb6" id="d4A-nS-1hK"/>
                 <outlet property="profileImg" destination="Ijy-4o-xrV" id="7Xl-TC-vZS"/>
+                <outlet property="updateBtn" destination="jz4-DX-pVj" id="74Z-bt-QLe"/>
+                <outlet property="updateUserBtn" destination="cWm-L3-fAy" id="4se-vR-9lQ"/>
+                <outlet property="updateUserTxt" destination="Tgp-BS-Idc" id="LNp-bD-hha"/>
                 <outlet property="userEmail" destination="z2Q-62-358" id="IHD-yH-d0E"/>
                 <outlet property="userName" destination="fX6-c1-4ej" id="GRp-XO-7Q5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,16 +81,54 @@
                                 <action selector="logoutPressed:" destination="-1" eventType="touchUpInside" id="1zp-7m-IxW"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWm-L3-fAy" customClass="RoundedButton" customModule="Smack_Devslopes" customModuleProvider="target">
+                            <rect key="frame" x="124" y="273" width="87" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Update User"/>
+                            <connections>
+                                <action selector="updateUserBtnFunc:" destination="-1" eventType="touchUpInside" id="egY-qF-yXp"/>
+                            </connections>
+                        </button>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tgp-BS-Idc">
+                            <rect key="frame" x="32" y="273" width="271" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz4-DX-pVj" customClass="RoundedButton" customModule="Smack_Devslopes" customModuleProvider="target">
+                            <rect key="frame" x="255" y="307" width="48" height="13"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <state key="normal" title="Update"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="updateBtnFunc:" destination="-1" eventType="touchUpInside" id="77x-gr-a1o"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="dxh-zL-vHy" secondAttribute="trailing" constant="8" id="0Z3-Sf-PNj"/>
+                        <constraint firstItem="jz4-DX-pVj" firstAttribute="leading" secondItem="mjQ-Ox-6pQ" secondAttribute="trailing" constant="48" id="32R-gX-iPe"/>
                         <constraint firstAttribute="height" constant="360" id="4UI-7S-pwq"/>
                         <constraint firstAttribute="bottom" secondItem="mjQ-Ox-6pQ" secondAttribute="bottom" constant="8" id="EUf-Zv-pHR"/>
+                        <constraint firstItem="Tgp-BS-Idc" firstAttribute="top" secondItem="cD3-GV-3AK" secondAttribute="bottom" constant="3" id="SoJ-EK-hZf"/>
+                        <constraint firstAttribute="bottom" secondItem="jz4-DX-pVj" secondAttribute="bottom" constant="40" id="fmK-fC-dzJ"/>
+                        <constraint firstAttribute="trailing" secondItem="jz4-DX-pVj" secondAttribute="trailing" constant="32" id="fxf-nK-Ivj"/>
                         <constraint firstItem="mjQ-Ox-6pQ" firstAttribute="centerX" secondItem="Bfo-1Y-pnc" secondAttribute="centerX" id="g0b-dy-gHo"/>
+                        <constraint firstItem="cWm-L3-fAy" firstAttribute="centerX" secondItem="Bfo-1Y-pnc" secondAttribute="centerX" id="gOR-Tz-9qS"/>
                         <constraint firstItem="dxh-zL-vHy" firstAttribute="top" secondItem="Bfo-1Y-pnc" secondAttribute="top" constant="8" id="gd4-Es-wG8"/>
+                        <constraint firstItem="mjQ-Ox-6pQ" firstAttribute="top" secondItem="Tgp-BS-Idc" secondAttribute="bottom" constant="4" id="mKm-r2-rbx"/>
+                        <constraint firstItem="Tgp-BS-Idc" firstAttribute="leading" secondItem="Bfo-1Y-pnc" secondAttribute="leading" constant="32" id="ncw-4v-TW1"/>
+                        <constraint firstItem="mjQ-Ox-6pQ" firstAttribute="top" secondItem="cWm-L3-fAy" secondAttribute="bottom" constant="4" id="pms-pj-wPn"/>
                         <constraint firstItem="cD3-GV-3AK" firstAttribute="centerX" secondItem="Bfo-1Y-pnc" secondAttribute="centerX" id="rdD-Y3-5bN"/>
+                        <constraint firstItem="jz4-DX-pVj" firstAttribute="top" secondItem="Tgp-BS-Idc" secondAttribute="bottom" constant="4" id="re3-p3-1Az"/>
                         <constraint firstItem="cD3-GV-3AK" firstAttribute="centerY" secondItem="Bfo-1Y-pnc" secondAttribute="centerY" constant="-20" id="tKc-kJ-IGo"/>
+                        <constraint firstItem="cWm-L3-fAy" firstAttribute="top" secondItem="cD3-GV-3AK" secondAttribute="bottom" constant="3" id="vwf-uq-V2m"/>
+                        <constraint firstAttribute="trailing" secondItem="Tgp-BS-Idc" secondAttribute="trailing" constant="32" id="wdv-hX-Sjz"/>
                     </constraints>
                 </view>
             </subviews>

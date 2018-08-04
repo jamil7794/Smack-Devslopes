@@ -13,6 +13,7 @@ import SwiftyJSON
 class AuthService{
     static let instance = AuthService()
     
+     var users = [Users]()
     let defaults = UserDefaults.standard // Dont store password
     
     var isLoggedIn : Bool {
@@ -166,4 +167,42 @@ class AuthService{
         
         userDataService.instance.setUserData(id: id, color: avatarColor, avatarName: avatarName, email: email, name: name)
     }
+    
+    func findUserById(ID: String, completion: @escaping CompletionHandler){
+        Alamofire.request("\(URL_FIND_USER_BY_ID) \(ID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                self.setUserInfo(data: data)
+                completion(true)
+            }else{
+                completion(false)
+            }
+        }
+    }
+    
+    func findAllUsers(completion: @escaping CompletionHandler){
+        Alamofire.request("\(URL_FIND_USER_BY_ID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+
+                guard let data = response.data else {return}
+                if let json = try!JSON(data:data).array {
+                    for item in json {
+                        let id = item["_id"].stringValue
+                        let avatarColor = item["avatarColor"].stringValue
+                        let avatarName = item["avatarName"].stringValue
+                        let email = item["email"].stringValue
+                        let name = item["name"].stringValue
+                        
+                        let user = Users(id: id, avatarName: avatarName, name: name, avatarColor: avatarColor, email: email)
+                        self.users.append(user)
+                    }
+                    completion(true)
+                }
+            }else{
+                debugPrint(response.result.error as Any)
+                completion(false)
+            }
+    }
+}
 }
